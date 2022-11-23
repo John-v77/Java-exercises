@@ -14,6 +14,7 @@ public class CountLetters {
         HashMap<Character, Integer> lettersFrequency = new HashMap<>();
 
         for(Character letter: textCharsList){
+            if(!Character.isAlphabetic(letter)){ continue;}
             char lowerChar = Character.toLowerCase(letter);
             if(!lettersFrequency.containsKey(lowerChar)){
                 lettersFrequency.put(lowerChar, 1);
