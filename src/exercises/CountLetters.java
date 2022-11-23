@@ -9,15 +9,16 @@ public class CountLetters {
                         " So if you move all the terms over to one side, you can put the quadratics into a form that can be factored allowing that" +
                         " side of the equation to equal zero. Once you’ve done that, it’s pretty straightforward from there.";
 
-        char[] textChars = text.toCharArray();
+        char[] textCharsList = text.toCharArray();
 
         HashMap<Character, Integer> lettersFrequency = new HashMap<>();
 
-        for(char letter: textChars){
-            if(!lettersFrequency.containsKey(letter)){
-                lettersFrequency.put(letter, 1);
+        for(Character letter: textCharsList){
+            char lowerChar = Character.toLowerCase(letter);
+            if(!lettersFrequency.containsKey(lowerChar)){
+                lettersFrequency.put(lowerChar, 1);
             } else {
-                lettersFrequency.put(letter, lettersFrequency.get(letter) + 1);
+                lettersFrequency.put(lowerChar, lettersFrequency.get(lowerChar) + 1);
             }
         }
 
