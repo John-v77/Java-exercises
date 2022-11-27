@@ -82,7 +82,15 @@ public class Student {
         return name + " (Credits: " + numberOfCredits + ", GPA: " + gpa + ")";
     }
 
+    public  boolean equals(Object toBeCompared){
 
+        if(toBeCompared == this){return true;}
+        if(toBeCompared == null){return false;}
+        if(toBeCompared.getClass() != getClass()){return false;}
+
+        Student theStudent = (Student) toBeCompared;
+        return theStudent.getStudentId() == getStudentId();
+    }
     public static void main(String[] args) {
         Student sally = new Student("Sally",1,1,4.0);
             System.out.println(sally.toString());
